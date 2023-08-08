@@ -246,16 +246,16 @@ class _FijkViewState extends State<FijkView> {
     super.dispose();
     widget.player.removeListener(_fijkValueListener);
 
-    var brightness = _fijkData.getValue(FijkData._fijkViewPanelBrightness);
+    var brightness = _fijkData.getValue(FijkData.fijkViewPanelBrightness);
     if (brightness != null && brightness is double) {
       FijkPlugin.setScreenBrightness(brightness);
-      _fijkData.clearValue(FijkData._fijkViewPanelBrightness);
+      _fijkData.clearValue(FijkData.fijkViewPanelBrightness);
     }
 
-    var volume = _fijkData.getValue(FijkData._fijkViewPanelVolume);
+    var volume = _fijkData.getValue(FijkData.fijkViewPanelVolume);
     if (volume != null && volume is double) {
       FijkVolume.setVol(volume);
-      _fijkData.clearValue(FijkData._fijkViewPanelVolume);
+      _fijkData.clearValue(FijkData.fijkViewPanelVolume);
     }
 
     widget.onDispose?.call(_fijkData);

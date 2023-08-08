@@ -131,13 +131,13 @@ class __FijkPanel2State extends State<_FijkPanel2> {
         _currentPos = v;
       }
       if (_needClearSeekData) {
-        widget.data.clearValue(FijkData._fijkViewPanelSeekto);
+        widget.data.clearValue(FijkData.fijkViewPanelSeekto);
       }
       _needClearSeekData = false;
     });
 
-    if (widget.data.contains(FijkData._fijkViewPanelSeekto)) {
-      var pos = widget.data.getValue(FijkData._fijkViewPanelSeekto) as double;
+    if (widget.data.contains(FijkData.fijkViewPanelSeekto)) {
+      var pos = widget.data.getValue(FijkData.fijkViewPanelSeekto) as double;
       _currentPos = Duration(milliseconds: pos.toInt());
     }
 
@@ -235,8 +235,8 @@ class __FijkPanel2State extends State<_FijkPanel2> {
       // right, volume
       _dragLeft = false;
       FijkVolume.getVol().then((v) {
-        if (!widget.data.contains(FijkData._fijkViewPanelVolume)) {
-          widget.data.setValue(FijkData._fijkViewPanelVolume, v);
+        if (!widget.data.contains(FijkData.fijkViewPanelVolume)) {
+          widget.data.setValue(FijkData.fijkViewPanelVolume, v);
         }
         setState(() {
           _volume = v;
@@ -247,8 +247,8 @@ class __FijkPanel2State extends State<_FijkPanel2> {
       // left, brightness
       _dragLeft = true;
       FijkPlugin.screenBrightness().then((v) {
-        if (!widget.data.contains(FijkData._fijkViewPanelBrightness)) {
-          widget.data.setValue(FijkData._fijkViewPanelBrightness, v);
+        if (!widget.data.contains(FijkData.fijkViewPanelBrightness)) {
+          widget.data.setValue(FijkData.fijkViewPanelBrightness, v);
         }
         setState(() {
           _brightness = v;
@@ -329,7 +329,7 @@ class __FijkPanel2State extends State<_FijkPanel2> {
 
   Widget buildTimeText(BuildContext context, double height) {
     String text =
-        "${_duration2String(_currentPos)}" + "/${_duration2String(_duration)}";
+        "${duration2String(_currentPos)}" + "/${duration2String(_duration)}";
     return Text(text, style: TextStyle(fontSize: 12, color: Color(0xFFFFFFFF)));
   }
 
@@ -360,7 +360,7 @@ class __FijkPanel2State extends State<_FijkPanel2> {
           setState(() {
             player.seekTo(v.toInt());
             _currentPos = Duration(milliseconds: _seekPos.toInt());
-            widget.data.setValue(FijkData._fijkViewPanelSeekto, _seekPos);
+            widget.data.setValue(FijkData.fijkViewPanelSeekto, _seekPos);
             _needClearSeekData = true;
             _seekPos = -1.0;
           });

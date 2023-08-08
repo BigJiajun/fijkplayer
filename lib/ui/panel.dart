@@ -50,7 +50,7 @@ class _DefaultFijkPanel extends StatefulWidget {
   _DefaultFijkPanelState createState() => _DefaultFijkPanelState();
 }
 
-String _duration2String(Duration duration) {
+String duration2String(Duration duration) {
   if (duration.inMilliseconds < 0) return "-: negtive";
 
   String twoDigits(int n) {
@@ -215,7 +215,7 @@ class _DefaultFijkPanelState extends State<_DefaultFijkPanel> {
             Padding(
               padding: EdgeInsets.only(right: 5.0, left: 5),
               child: Text(
-                '${_duration2String(_currentPos)}',
+                '${duration2String(_currentPos)}',
                 style: TextStyle(fontSize: 14.0),
               ),
             ),
@@ -255,7 +255,7 @@ class _DefaultFijkPanelState extends State<_DefaultFijkPanel> {
                 : Padding(
                     padding: EdgeInsets.only(right: 5.0, left: 5),
                     child: Text(
-                      '${_duration2String(_duration)}',
+                      '${duration2String(_duration)}',
                       style: TextStyle(
                         fontSize: 14.0,
                       ),

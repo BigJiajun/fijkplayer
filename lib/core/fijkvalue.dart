@@ -356,9 +356,9 @@ class FijkException implements Exception {
 }
 
 class FijkData {
-  static String _fijkViewPanelVolume = "__fijkview_panel_init_volume";
-  static String _fijkViewPanelBrightness = "__fijkview_panel_init_brightness";
-  static String _fijkViewPanelSeekto = "__fijkview_panel_sekto_position";
+  static String fijkViewPanelVolume = "__fijkview_panel_init_volume";
+  static String fijkViewPanelBrightness = "__fijkview_panel_init_brightness";
+  static String fijkViewPanelSeekto = "__fijkview_panel_sekto_position";
 
   final Map<String, dynamic> _data = HashMap();
 
